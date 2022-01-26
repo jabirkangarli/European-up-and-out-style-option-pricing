@@ -19,17 +19,17 @@ a) volatility of the underlying instrument returns\
 b) time to maturity of the option.
 
 
-We will create an ``Rcpp`` package which provides a function returning the ``Monte Carlo`` approximation of the option theoretical price.
+We will create an ``Rcpp`` package that provides a function returning the ``Monte Carlo`` approximation of the option theoretical price.
 
-Our code is ready to price the option for any values of its characteristics, nevertheless we will use the theoretical price for the following values:
+Our code is ready to price the option for any values of its characteristics, nevertheless, we will use the theoretical price for the following values:
 
-• price of the underyling at the moment of option pricing: ``S0 = 105``\
+• price of the underlying at the moment of option pricing: ``S0 = 105``\
 • strike price ``K = 100``\
 • annualized volatility rate ``σ = 0.22``\
 • annualized risk-free rate ``r = 0.05``\
 • time to maturity ``t = 0.5``
 
-As far as the barrier level is concerned, since the barrier options are used for hedging in short term, I marked barrier level as 120. If the barrier level would be in the approximation of 110, most likely the option would be knocked out.
+As far as the barrier level is concerned, since the barrier options are used for hedging in short term, I marked the barrier level as 120. If the barrier level would be in the approximation of 110, most likely the option would be knocked out.
 
 
 To be able to have proper environment to work on the project, please refer to the Mr. Paweł Sakowski's reporsitory:
