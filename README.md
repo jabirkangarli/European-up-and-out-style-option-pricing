@@ -32,8 +32,7 @@ Our code is ready to price the option for any values of its characteristics, nev
 As far as the barrier level is concerned, since the barrier options are used for hedging in short term, I marked barrier level as 120. If the barrier level would be in the approximation of 110, most likely the option would be knocked out.
 
 
-
-Please find the following instructions to have proper environment to be able to work on the project, please refer to the Mr. Paweł Sakowski's reporsitory :
+To be able to have proper environment to work on the project, please refer to the Mr. Paweł Sakowski's reporsitory:
 https://github.com/pawelsakowski/AF-RCPP-2021-2022/
 
 
