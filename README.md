@@ -14,8 +14,8 @@ Specifically, we are interested in:
 
 1. the theoretical price of this option
 
-2. relation between the theoretical price of the option and two factors (simultaneously):
-a) volatility of the underlying instrument returns, and
+2. relation between the theoretical price of the option and two factors (simultaneously):\
+a) volatility of the underlying instrument returns\
 b) time to maturity of the option.
 
 
