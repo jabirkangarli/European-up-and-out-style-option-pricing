@@ -33,6 +33,6 @@ As far as the barrier level is concerned, since the bareer options are used for 
 
 
 
-Please find the following instructions to have proper environment to be able to work on the project, please refer to the Mr. Paweł Sakowski's[reporsitory](https://github.com/pawelsakowski/AF-RCPP-2021-2022/)
+Please find the following instructions to have proper environment to be able to work on the project, please refer to the Mr. Paweł Sakowski's [reporsitory](https://github.com/pawelsakowski/AF-RCPP-2021-2022/)
 
 
