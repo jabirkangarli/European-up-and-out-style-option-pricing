@@ -29,7 +29,7 @@ Our code is ready to price the option for any values of its characteristics, nev
 • annualized risk-free rate ``r = 0.05``\
 • time to maturity ``t = 0.5``
 
-As far as the barrier level is concerned, since the bareer options are used for hedging in short term, I marked bareer level as 120. If the bareer level would be approximation of 110, most likely the option would be knocked out.
+As far as the barrier level is concerned, since the barrier options are used for hedging in short term, I marked barrier level as 120. If the barrier level would be in the approximation of 110, most likely the option would be knocked out.
 
 
 
