@@ -1,0 +1,87 @@
+---
+title: "European Up and Out Call option pricer"
+author: "Jabir Kangarli"
+date: "15/01/2022"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Installing the needed packages
+
+Let's firstly install the needed R packages to be able to produce the final output of our work. We will call ``dplyr`` package to do some manipulations on data, ``ggplot2`` package to visualize the data, and finally, ``EuropeanUpAndOutCall`` package, which we created in previous steps, to be able to price the option.
+
+```{r install package,message=FALSE, warning=FALSE}
+#install.packages("dplyr")
+#install.packages("ggplot2")
+library(dplyr)
+library(ggplot2)
+remove.packages("EuropeanUpAndOutCall")
+install.packages("EuropeanUpAndOutCall_1.0.tar.gz",
+                 type = "source",
+                 repos = NULL)
+```
+
+In the project we are specifically interested in the theoretical price of this option and time to maturity. The relationship between the theoretical price of the option and volatility of the underlying instrument returns will be assessed simultaneously.
+
+For this option exercise we have below given values:
+
+$S_{0}$ = 105\
+K = 100\
+σ = 0.22\
+r = 0.05\
+t = 0.5\
+
+$S_{0}$ - the underlying price at the moment of option pricing\
+K - strike price of the financial instrument\
+$\sigma$ - annualized volatility rate\
+r - annualized risk-free rate\
+t - time to maturity - 0.5 indicates that option will be exercised for 6 month before its maturity/expiration date.\
+
+Now let's apply all these values in our function:
+```{r call function, echo=TRUE}
+EuropeanUpAndOutCall::getEuropeanCallPrice(126,100,105,0.22,0.05,0.5,120)
+```
+
+## The wrapping function: 
+
+
+
+```{r, message=FALSE, warning=FALSE}
+myEuropeanUpAndOutCall <- function(vol, expiry){
+  return(EuropeanUpAndOutCall::getEuropeanCallPrice(126,100,105,vol,0.05,expiry,120))
+}
+
+myEuropeanUpAndOutCall(0.22, 0.5)
+```
+
+
+## Relation between the theoretical price of the option and Time of Maturity and Volatility
+
+```{r}
+expiry <- seq(0, 1, by = 0.25)
+vol  <- c(0.001, 0.01, 0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5, 1)
+
+grid      <- expand.grid(expiry = expiry, vol = vol)
+prices    <- mapply(myEuropeanUpAndOutCall, expiry = grid$expiry, vol = grid$vol)
+```
+
+```{r}
+grid %>% 
+  as_tibble() %>%
+  bind_cols(price = prices) %>%
+  ggplot(aes(x = expiry, y = price, group = vol, colour = vol)) +
+  geom_line() +
+  geom_point(size = 1, shape = 21, fill = "white") +
+  labs(
+    x     = "Time of Maturity",
+    y     = "option price",
+    title = "price of European Call Option vs. Time of Maturity and Volatility",
+    caption = "source: own calculations with the EuropeanUpAndOutCall package")
+
+```
