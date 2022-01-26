@@ -8,7 +8,7 @@ The ``Rcpp`` package used to provide function defined in ``c++`` which will be r
 
 
 
-We are considering an ``European style up-and-out call`` option with a ``barrier`` active between the moment of pricing and the option expiry.
+We are considering a ``European style up-and-out call`` option with a ``barrier`` active between the moment of pricing and the option expiry.
 
 Specifically, we are interested in:
 
