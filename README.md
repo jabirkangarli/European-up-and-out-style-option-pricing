@@ -23,10 +23,10 @@ We will create an ``Rcpp`` package which provides a function returning the ``Mon
 
 Our code is ready to price the option for any values of its characteristics, nevertheless we will use the theoretical price for the following values:
 
-• price of the underyling at the moment of option pricing: ``S0 = 105``,
-• strike price ``K = 100``,
-• annualized volatility rate ``σ = 0.22``
-• annualized risk-free rate ``r = 0.05``
+• price of the underyling at the moment of option pricing: ``S0 = 105``\
+• strike price ``K = 100``\
+• annualized volatility rate ``σ = 0.22``\
+• annualized risk-free rate ``r = 0.05``\
 • time to maturity ``t = 0.5``
 
 As far as the barrier level is concerned, since the bareer options are used for hedging in short term, I marked bareer level as 120. If the bareer level would be approximation of 110, most likely the option would be knocked out.
