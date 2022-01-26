@@ -23,7 +23,7 @@ We will create an ``Rcpp`` package which provides a function returning the ``Mon
 
 Our code is ready to price the option for any values of its characteristics, nevertheless we will use the theoretical price for the following values:
 
-• price of the underyling at the moment of option pricing: ``$S_{0}$ = 105``\
+• price of the underyling at the moment of option pricing: ``$S0 = 105``\
 • strike price ``K = 100``\
 • annualized volatility rate ``σ = 0.22``\
 • annualized risk-free rate ``r = 0.05``\
